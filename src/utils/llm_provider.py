@@ -207,12 +207,13 @@ def get_llm_model(provider: str, **kwargs):
         )
     elif provider == "grok":
         if not kwargs.get("base_url", ""):
-            base_url = os.getenv("GROK_ENDPOINT", "https://api.x.ai/v1")
+            base_url = os.getenv("GROQ_ENDPOINT", "https://api.groq.com/openai/v1")
         else:
             base_url = kwargs.get("base_url")
-
+        # Default to Groq's tool-calling model if not specified
+        model_name = kwargs.get("model_name", "meta-llama/llama-4-scout-17b-16e-instruct")
         return ChatOpenAI(
-            model=kwargs.get("model_name", "grok-3"),
+            model=model_name,
             temperature=kwargs.get("temperature", 0.0),
             base_url=base_url,
             api_key=api_key,
@@ -285,6 +286,18 @@ def get_llm_model(provider: str, **kwargs):
 
         return ChatOpenAI(
             model=kwargs.get("model_name", "qwen-plus"),
+            temperature=kwargs.get("temperature", 0.0),
+            base_url=base_url,
+            api_key=api_key,
+        )
+    elif provider == "ai_gateway":
+        if not kwargs.get("base_url", ""):
+            base_url = os.getenv("AI_GATEWAY_ENDPOINT", "https://ai-gateway.vercel.sh/v1")
+        else:
+            base_url = kwargs.get("base_url")
+        model_name = kwargs.get("model_name", "openai/gpt-5")
+        return ChatOpenAI(
+            model=model_name,
             temperature=kwargs.get("temperature", 0.0),
             base_url=base_url,
             api_key=api_key,

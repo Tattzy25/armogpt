@@ -8,7 +8,14 @@ PROVIDER_DISPLAY_NAMES = {
     "moonshot": "MoonShot",
     "unbound": "Unbound AI",
     "ibm": "IBM",
-    "grok": "Grok",
+    "grok": "Groq",
+    "ai_gateway": "Vercel AI Gateway",
+    "ai_gateway": [
+        "openai/gpt-5",
+        "openai/gpt-4o",
+        "openai/gpt-4",
+        "openai/gpt-3.5-turbo"
+    ],
 }
 
 # Predefined model names for common providers
@@ -34,6 +41,7 @@ model_names = {
         "grok-2-vision",
         "grok-2-image",
         "grok-2",
+        "meta-llama/llama-4-scout-17b-16e-instruct",
     ],
     "siliconflow": [
         "deepseek-ai/DeepSeek-R1",

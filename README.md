@@ -149,3 +149,22 @@ TARGETPLATFORM=linux/arm64 docker compose up --build
 - [x] **2025/01/26:** Thanks to @vvincent1234. Now ArmoGPT can combine with DeepSeek-r1 to engage in deep thinking!
 - [x] **2025/01/10:** Thanks to @casistack. Now we have Docker Setup option and also Support keep browser open between tasks.[Video tutorial demo](https://github.com/Tattzy25/armogpt/issues/1#issuecomment-2582511750).
 - [x] **2025/01/06:** Thanks to @richard-devbot. A New and Well-Designed ArmoGPT is released. [Video tutorial demo](https://github.com/Tattzy25/armogpt/issues/1#issuecomment-2573393113).
+
+## Multi-Server and Multi-Agent Configuration
+
+ArmoGPT now supports connecting to multiple MCP servers and managing multiple agents per server. This is configured via the `server.json` file in your project root.
+
+### Example `server.json` Structure
+```json
+{
+  "servers": [ ... ]
+}
+```
+
+### How to Use
+1. Edit `server.json` as needed
+2. Upload/reference in Web UI
+3. Switch between servers/agents
+4. Keep API keys secure
+
+For more details, see the updated README.md or [official documentation](https://armogpt.com/docs).

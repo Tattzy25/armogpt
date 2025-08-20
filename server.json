@@ -1,0 +1,21 @@
+{
+  "servers": [
+    {
+      "name": "ArmoGPT MCP Server",
+      "host": "http://localhost:11434",
+      "endpoints": { "tags": "/api/tags", "chat": "/api/chat" },
+      "auth": { "api_key_header": "X-API-Key", "api_key_value": "_rUYzVLcNGrJ_JwnD-0sbjHDRUU6SX10ebQ7VF1s0Kw" },
+      "agents": [ { "name": "DefaultAgent", "type": "ollama", "model": "llama3" } ]
+    },
+    {
+      "name": "Remote MCP Server",
+      "host": "http://192.168.1.100:11434",
+      "endpoints": { "tags": "/api/tags", "chat": "/api/chat" },
+      "auth": { "api_key_header": "X-API-Key", "api_key_value": "REMOTE_API_KEY" },
+      "agents": [
+        { "name": "RemoteAgent", "type": "ollama", "model": "mistral" },
+        { "name": "ResearchAgent", "type": "custom", "model": "gpt-4" }
+      ]
+    }
+  ]
+}
