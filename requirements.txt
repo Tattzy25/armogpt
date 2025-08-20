@@ -1,0 +1,13 @@
+beautifulsoup4
+httptools
+lxml
+gradio
+json-repair
+langchain-mistralai
+MainContentExtractor
+langchain-ibm
+langchain_mcp_adapters
+langgraph
+langchain-community
+pyperclip
+browser-use
